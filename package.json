@@ -11,8 +11,8 @@
     "ali-oss": "^6.9.0",
     "chalk": "^4.0.0",
     "ignore": "^5.1.8",
-    "sade": "^1.7.3",
-    "xxhash": "^0.3.0"
+    "md5-file": "^5.0.0",
+    "sade": "^1.7.3"
   },
   "devDependencies": {
     "@types/node": "^14.0.11",

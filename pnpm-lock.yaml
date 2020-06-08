@@ -2,8 +2,8 @@ dependencies:
   ali-oss: 6.9.0
   chalk: 4.0.0
   ignore: 5.1.8
+  md5-file: 5.0.0
   sade: 1.7.3
-  xxhash: 0.3.0
 devDependencies:
   '@types/node': 14.0.11
   '@types/sade': 1.7.1
@@ -600,6 +600,14 @@ packages:
     resolution:
       integrity: sha1-HaJ+ZxAnGUdpXa9oSOhH8B2EuSA=
       tarball: lru-cache/download/lru-cache-5.1.1.tgz
+  /md5-file/5.0.0:
+    dev: false
+    engines:
+      node: '>=10.13.0'
+    hasBin: true
+    resolution:
+      integrity: sha1-5Rn2Mf7KnDnn+eoXgLY8R0UBLiA=
+      tarball: md5-file/download/md5-file-5.0.0.tgz
   /merge-descriptors/1.0.1:
     dev: false
     resolution:
@@ -680,11 +688,6 @@ packages:
     resolution:
       integrity: sha1-lQCAV6Vsr63CvGPd5/n/aVWUjjI=
       tarball: mz/download/mz-2.7.0.tgz
-  /nan/2.14.1:
-    dev: false
-    resolution:
-      integrity: sha1-174036MQW5FJTDFHCJMV7/iHSwE=
-      tarball: nan/download/nan-2.14.1.tgz
   /netmask/1.0.6:
     dev: false
     engines:
@@ -1164,16 +1167,6 @@ packages:
     resolution:
       integrity: sha1-u3J3n1+kZRhrH0OPZ0+jR/2121Q=
       tarball: xtend/download/xtend-4.0.2.tgz
-  /xxhash/0.3.0:
-    dependencies:
-      nan: 2.14.1
-    dev: false
-    engines:
-      node: '>=4.0.0'
-    requiresBuild: true
-    resolution:
-      integrity: sha1-0giTpixbD3JgWX3VWFmxKh4CxVk=
-      tarball: xxhash/download/xxhash-0.3.0.tgz
   /yallist/3.1.1:
     dev: false
     resolution:
@@ -1185,5 +1178,5 @@ specifiers:
   ali-oss: ^6.9.0
   chalk: ^4.0.0
   ignore: ^5.1.8
+  md5-file: ^5.0.0
   sade: ^1.7.3
-  xxhash: ^0.3.0
