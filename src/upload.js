@@ -2,6 +2,7 @@ const OSS = require('ali-oss');
 const chalk = require('chalk');
 const ignore = require('ignore');
 const fs = require('fs');
+const xxhash = require('xxhash');
 
 const log = console.log;
 const cwd = process.cwd();
@@ -32,20 +33,27 @@ const validateOpts = (opts, ig) => {
   }
 }
 
-const uploadToOSS = (ossConfig, files) => {
+const uploadToOSS = async (ossConfig, files) => {
   const client = new OSS(ossConfig);
-  client.push()
+  try {
+    for (let file of files) {
+      await client.put(file, file);
+    }
+  } catch (e) {
+    throw new Error(e);
+  }
 }
 
 const readDirRecursively = (dirPath, ig) => {
   let files = [];
-  // console.log(chalk.yellow(`Reading ${dirPath}`));
+  const currentDir =cwd.split('/').slice(-1)[0]
+
   fs.readdirSync(dirPath).forEach(file => {
+
     let fullPath = `${dirPath}/${file}`;
     let filename = fullPath.split('/').slice(-1)[0];
-    // console.log(`fullpath: ${fullPath}`);
+
     if (!ig.ignores(filename)) {
-      // console.log(`filename: ${filename}`);
       if (fs.lstatSync(fullPath).isDirectory()) {
         files = files.concat(readDirRecursively(fullPath, ig));
       } else if (fs.lstatSync(fullPath).isFile()) {
@@ -54,16 +62,40 @@ const readDirRecursively = (dirPath, ig) => {
     } else {
       console.log(`Ignores ${filename}`);
     }
+
   });
 
   return files;
 }
 
+const fileHash = async (file) => {
+  return new Promise((resolve, reject) => {
+    let rs = fs.createReadStream(file);
+    let hash = xxhash.h
+  });
+}
+
+const generateFilesHashJSON = () => {
+
+}
+
+const getCreatedfiles = () => {
+
+}
+
 const upload = (opts) => {
   const ig = ignore();
   const { isForce, ossConfig } = validateOpts(opts, ig);
-  const files =  readDirRecursively(cwd, ig);
+  let files =  readDirRecursively('.', ig);
 
+  // convert to absolute oss path
+  files = files.map(item => item.split('').slice(2).join(''));
+
+  if (isForce) {
+
+  } else {
+    uploadToOSS(ossConfig, files);
+  }
 }
 
 
