@@ -13,6 +13,7 @@ prog.command('upload')
     .option('-c, --config', 'Specify configuration file.', '.ossconfig')
     .option('-i, --ignore', 'Specify ignore file.', '.ossignore')
     .option('-f, --force', 'Force upload all files.', false)
+    .option('-p, --path', 'Upload dir path.', '.')
     .action(opts => {
         upload(opts);
     });
