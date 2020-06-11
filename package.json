@@ -2,7 +2,7 @@
   "name": "alioss-incremental",
   "version": "1.0.0",
   "description": "Incrementally upload files to ali-oss",
-  "main": "index.ts",
+  "main": "index.js",
   "repository": "git@github.com:Wzb3422/alioss-incremental.git",
   "author": "wzb <wzb3422@gmail.com>",
   "license": "MIT",
@@ -10,6 +10,7 @@
   "dependencies": {
     "ali-oss": "^6.9.0",
     "chalk": "^4.0.0",
+    "cli-progress": "^3.8.2",
     "ignore": "^5.1.8",
     "md5-file": "^5.0.0",
     "sade": "^1.7.3"
