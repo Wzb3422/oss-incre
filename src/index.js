@@ -5,8 +5,8 @@ const prog = sade('oss-incre');
 const version = '0.0.1';
 
 
-prog.version(`v${version}. CopyRight © 2020-present Zachary Wu.`)
-    .describe(`oss-incre v${version}. CopyRight © 2020-present Zachary Wu.`);
+prog.version(`v${version}. CopyRight © 2020-present Zeb Wu.`)
+    .describe(`oss-incre v${version}. CopyRight © 2020-present Zeb Wu.`);
 
 prog.command('upload')
     .describe('Upload files. Incrementally by default.')
